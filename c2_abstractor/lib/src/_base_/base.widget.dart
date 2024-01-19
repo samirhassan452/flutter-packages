@@ -6,8 +6,8 @@ part of '../base.imports.dart';
 ///
 /// ```dart
 /// class IconButtonUC extends C2Abstractor {
-///    const IconButtonUC.arrow({super.key}): super(IconButton(icon: Icon(Icons.arrow_back)));
-///    const IconButtonUC.close({super.key}): super(IconButton(icon: Icon(Icons.close)));
+///    const IconButtonUC.arrow({super.key}): super(child: IconButton(icon: Icon(Icons.arrow_back)));
+///    const IconButtonUC.close({super.key}): super(child: IconButton(icon: Icon(Icons.close)));
 /// }
 /// ```
 abstract class C2Abstractor extends StatelessWidget {

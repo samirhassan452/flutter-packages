@@ -14,7 +14,7 @@ Abstractor widget that enables you to create many different use-cases for a widg
 
 ```dart
 class IconButtonUC extends C2Abstractor {
-   const IconButtonUC.arrow({super.key}): super(IconButton(icon: Icon(Icons.arrow_back)));
-   const IconButtonUC.close({super.key}): super(IconButton(icon: Icon(Icons.close)));
+   const IconButtonUC.arrow({super.key}): super(child: IconButton(icon: Icon(Icons.arrow_back)));
+   const IconButtonUC.close({super.key}): super(child: IconButton(icon: Icon(Icons.close)));
 }
 ```
