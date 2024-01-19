@@ -1,12 +1,13 @@
 name: abstractor
 description: "A widget that enables you to create use-cases for any widget easily."
 version: 0.0.1
-homepage:
-repository:
-issue_tracker:
-documentation:
+homepage: https://github.com/samirhassan452/flutter-packages
+repository: https://github.com/samirhassan452/flutter-packages
+issue_tracker: https://github.com/samirhassan452/flutter-packages/issues
+documentation: https://github.com/samirhassan452/flutter-packages/tree/main/abstractor
 topics: []
 
+publish_to: 'none'
 
 environment:
   sdk: '>=3.2.3 <4.0.0'
