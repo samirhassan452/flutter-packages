@@ -1,0 +1,32 @@
+name: textify
+description: "Reach out to different types of Text widgets in just one place."
+version: 0.0.1
+homepage: https://github.com/samirhassan452/flutter-packages
+repository: https://github.com/samirhassan452/flutter-packages
+issue_tracker: https://github.com/samirhassan452/flutter-packages/issues
+documentation: https://github.com/samirhassan452/flutter-packages/tree/main/textify
+topics: []
+
+publish_to: 'none'
+
+environment:
+  sdk: '>=3.2.3 <4.0.0'
+  flutter: ">=1.17.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  
+  abstractor:
+    git:
+      url: git@github.com:samirhassan452/flutter-packages.git
+      path: abstractor
+  # Automatically resizes text to fit perfectly within its bounds
+  auto_size_text: ^3.0.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.1
+
+flutter:
