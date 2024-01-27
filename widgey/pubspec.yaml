@@ -1,0 +1,39 @@
+name: widgey
+description: "The most common widgets for use in most projects."
+version: 0.0.1
+homepage: https://github.com/samirhassan452/flutter-packages
+repository: https://github.com/samirhassan452/flutter-packages
+issue_tracker: https://github.com/samirhassan452/flutter-packages/issues
+documentation: https://github.com/samirhassan452/flutter-packages/tree/main/widgey
+topics: []
+
+publish_to: 'none'
+
+environment:
+  sdk: '>=3.2.5 <4.0.0'
+  flutter: ">=1.17.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  
+  abstractor:
+    git:
+      url: git@github.com:samirhassan452/flutter-packages.git
+      path: abstractor
+  textify:
+    git:
+      url: git@github.com:samirhassan452/flutter-packages.git
+      path: textify
+  utilify:
+    git:
+      url: git@github.com:samirhassan452/flutter-packages.git
+      path: utilify
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.1
+
+# The following section is specific to Flutter packages.
+flutter:
