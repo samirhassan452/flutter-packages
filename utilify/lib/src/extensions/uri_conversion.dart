@@ -1,22 +1,28 @@
 part of '../base.imports.dart';
 
 extension UriConversion on Uri {
-  Uri embedUriParam(dynamic param) => replace(
-        pathSegments: [
-          ...pathSegments,
-          ...param.toString().split("/"),
-        ].toList(),
-      );
+  Uri embedUriParam(dynamic param, {String pattern = r'/:([^:]+):'}) {
+    final paramSegments = param.toString().split("/");
+    return replace(
+      path: [
+        ...path.replaceAll(RegExp(pattern), "").split('/'),
+        ...paramSegments,
+      ].join("/"),
+    );
+  }
 
-  Uri embedUriParams(List<dynamic> params) => replace(
-        pathSegments: [
-          ...pathSegments,
-          ...params
-              .map((param) => param.toString().split("/").toList())
-              .toList()
-              .expand((subList) => subList),
-        ].toList(),
-      );
+  Uri embedUriParams(List<dynamic> params, {String pattern = r'/:([^:]+):'}) {
+    final flattenedSegments = params
+        .map((param) => param.toString().split("/"))
+        .expand((subList) => subList)
+        .toList();
+    return replace(
+      path: [
+        ...path.replaceAll(RegExp(pattern), "").split("/"),
+        ...flattenedSegments,
+      ].join("/"),
+    );
+  }
 
   Uri embedQueryParams(Map<String, dynamic> params) {
     return replace(
