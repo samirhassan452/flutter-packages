@@ -25,5 +25,6 @@ extension IconConversion<T> on T? {
   bool get _isImg =>
       (this! as String).contains(".png") ||
       (this! as String).contains(".jpg") ||
-      (this! as String).contains(".jpeg");
+      (this! as String).contains(".jpeg") ||
+      (this! as String).contains(".gif");
 }
