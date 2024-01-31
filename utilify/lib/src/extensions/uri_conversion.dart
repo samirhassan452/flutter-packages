@@ -34,7 +34,7 @@ extension UriConversion on Uri {
   }
 }
 
-extension StringConversion on String {
+extension UrlConversion on String {
   String embedParam(dynamic param, {String pattern = r'/:([^:]+):'}) {
     final paramSegments = param.toString().split("/");
     return [
