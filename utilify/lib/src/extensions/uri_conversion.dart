@@ -27,3 +27,24 @@ extension UriConversion on Uri {
     );
   }
 }
+
+extension StringConversion on String {
+  String embedParam(dynamic param, {String pattern = r'/:([^:]+):'}) {
+    final paramSegments = param.toString().split("/");
+    return [
+      ...replaceAll(RegExp(pattern), "").split('/'),
+      ...paramSegments,
+    ].join("/");
+  }
+
+  String embedParams(List<dynamic> params, {String pattern = r'/:([^:]+):'}) {
+    final flattenedSegments = params
+        .map((param) => param.toString().split("/"))
+        .expand((subList) => subList)
+        .toList();
+    return [
+      ...replaceAll(RegExp(pattern), "").split("/"),
+      ...flattenedSegments,
+    ].join("/");
+  }
+}
