@@ -6,7 +6,10 @@ part of '../base.imports.dart';
 abstract final class UFormatter {
   UFormatter._();
 
-  static String formatDate(DateTime? date, {String format = "dd-MM-yyyy"}) {
+  static String formatDate(
+    DateTime? date, {
+    String format = UDateFormat.ddMMyyyySlash,
+  }) {
     date ??= DateTime.now();
     return DateFormat(format).format(date);
   }

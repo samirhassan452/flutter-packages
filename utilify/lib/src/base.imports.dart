@@ -1,5 +1,5 @@
 //! imports
-import 'dart:convert' show json;
+import 'dart:convert' show base64Decode, base64Encode, json;
 import 'dart:developer' as devtools show log;
 import 'dart:io' show File, InternetAddress, Platform, SocketException;
 import 'dart:ui' show ViewPadding;
@@ -22,6 +22,7 @@ import 'package:intl/intl.dart' show DateFormat, NumberFormat;
 //? Classes
 part 'classes/range_list.dart';
 //? Constants
+part 'constants/date_formats.dart';
 part 'constants/durations.dart';
 part 'constants/regex.dart';
 part 'constants/sizes.dart';
@@ -30,6 +31,7 @@ part 'constants/typedefs.dart';
 part 'device/device_utils.dart';
 //? Enums
 part 'enums/api_responses.dart';
+part 'enums/auth_status.dart';
 part 'enums/bloc_status.dart';
 part 'enums/font_weight_types.dart';
 part 'enums/log_types.dart';
@@ -51,4 +53,5 @@ part 'extensions/uri_conversion.dart';
 //?
 part 'formatters/formatter.dart';
 //?
+part 'helpers/file_functions.dart';
 part 'helpers/helper_functions.dart';

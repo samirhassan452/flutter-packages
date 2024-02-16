@@ -124,6 +124,9 @@ extension StringConversion on String {
 }
 
 extension NullableStringConversion on String? {
+  /// Return empty string if the string is null
+  String get orEmpty => this ?? '';
+
   String emptyIfNull() => switch (this) {
         (String? val) when val == null => '',
         _ => this!,

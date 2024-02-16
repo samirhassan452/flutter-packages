@@ -19,6 +19,9 @@ extension DateTimeConversion on DateTime {
 
 ///
 extension NullableDateTimeConversion on DateTime? {
+  /// Return DateTime.now() if the DateTime is null
+  DateTime get orNow => this ?? DateTime.now();
+
   DateTime emptyIfNull() => switch (this) {
         (DateTime? val) when val == null => DateTime(0001),
         _ => this!,
@@ -27,6 +30,10 @@ extension NullableDateTimeConversion on DateTime? {
   bool get isEmpty => this != null && this!.year == 0001;
   bool get isNotEmpty => isEmpty == false;
   bool get isNullOrEmpty => this == null || isEmpty;
+
+  /// Format date
+  String toDateFormat({String format = UDateFormat.ddMMyyyySlash}) =>
+      UFormatter.formatDate(this, format: format);
 }
 
 ///
