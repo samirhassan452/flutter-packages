@@ -17,6 +17,16 @@ dependencies:
   flutter:
     sdk: flutter
 
+  abstractor:
+    git:
+      url: git@github.com:samirhassan452/flutter-packages.git
+      path: abstractor
+  widgey:
+    git:
+      url: git@github.com:samirhassan452/flutter-packages.git
+      path: widgey
+  collection: ^1.18.0
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

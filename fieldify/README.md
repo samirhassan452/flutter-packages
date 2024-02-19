@@ -13,7 +13,7 @@ Fieldify(
     // You need to pass just one "controller or initialValue"
     controller: controller, // Can be null,
     initialValue: initialValue, // Can be null,
-    style: const InputFieldStyle(),
+    style: const FieldifyStyle(),
     onChanged: (String value) {} // Can be null,
     // and many other more methods, Discover now!
 ),
@@ -23,7 +23,7 @@ Fieldify.readOnly(
     // You need to pass just one "controller or initialValue"
     controller: controller, // Can be null,
     initialValue: initialValue, // Can be null,
-    style: const InputFieldStyle(), // Will be override by copyWith (enabled:false, readOnly: true),
+    style: const FieldifyStyle(), // Will be override by copyWith (enabled:false, readOnly: true),
     onDisabled: () {} // Can be null,
 ),
 ```
