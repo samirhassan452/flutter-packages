@@ -1,5 +1,5 @@
 name: pixelify
-description: "Reach out to different types of Icon/Image widgets in just one place."
+description: "A facilitate package to tell you that you don't need to specify the image/icon type anymore."
 version: 0.0.1
 homepage: https://github.com/samirhassan452/flutter-packages
 repository: https://github.com/samirhassan452/flutter-packages
@@ -21,6 +21,9 @@ dependencies:
     git:
       url: git@github.com:samirhassan452/flutter-packages.git
       path: abstractor
+  
+  # An SVG rendering and widget library for Flutter, which allows painting and displaying Scalable Vector Graphics 1.1 files.
+  flutter_svg: ^2.0.9
   
 dev_dependencies:
   flutter_test:
