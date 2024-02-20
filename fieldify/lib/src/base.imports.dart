@@ -11,7 +11,7 @@ import 'package:widgey/widgey.dart' show AsteriskPosition, Widgey;
 
 //! parts
 part '_base_/base.widget.dart';
-part 'styles/fieldify.dart';
+part 'styles/fieldify_style.dart';
 part 'utils/label_behaviors.dart';
 part 'utils/typedefs.dart';
 part 'widgets/fieldify.widget.dart';

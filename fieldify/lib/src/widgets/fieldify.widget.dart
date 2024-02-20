@@ -87,6 +87,8 @@ class _FieldifyWidgetState extends State<FieldifyWidget> {
           },
           errorText: errorText,
           error: error,
+          // to hide error text forever to show custom error with actual gap and padding
+          errorStyle: const TextStyle(height: 0, fontSize: 0),
           // 0.0: center, 1.0: centerEnd, -1.0: centerStart
           // 1.0 centerEnd / prefix extra space to move widget to actual alignment without losing padding or icon size
           prefixIcon: widget.style.decoration?.prefixIcon,
