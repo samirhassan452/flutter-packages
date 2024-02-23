@@ -1,3 +1,5 @@
+#! After initialize this file, run [flutter gen-l10n] !#
+
 # the path of the directory that contains the translation files
 arb-dir: lib/src/l10n
 # the name of the template arb file that will be used as basis for generating the Dart localization files
