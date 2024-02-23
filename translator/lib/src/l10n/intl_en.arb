@@ -1,0 +1,15 @@
+{
+    "@@locale": "en",
+    "@@author": "Samir Hassan",
+
+    "appName": "[Add your app name here]",
+    "@appName": {
+        "description": "The official app name"
+    },
+    "appDescription": "[Add your app description here]",
+    "@appDescription": {
+        "description": "The official app description"
+    },
+
+    "@@last_modified": "2024-02-21T20:00-22:00"
+}
