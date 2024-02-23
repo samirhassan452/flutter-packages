@@ -1,39 +1,75 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+<p align="center" style="font-size: 5em;">
+🚀 Translator 🚀
+</p>
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages).
+---
 
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages).
--->
+A Flutter package which responsible for translation/localization.
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+## How to install
 
-## Features
+1. Navigate to the root of you project
+2. Create a packages folder
+```Shell
+mkdir packages
+```
+3. Copy translator package inside packages folder
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
 
-## Getting started
+## How to update arb
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
-
-## Usage
-
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
-
-```dart
-const like = 'sample';
+1. Update intl or arb files
+2. Navigate to translator package
+```Shell
+cd packages/translator/
+```
+3. Update generated app localizations
+```Shell
+flutter gen-l10n
 ```
 
-## Additional information
+## How to use
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+1. Setup translator before `runApp()`
+```dart
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  /// You can specify initial locale
+  /// and also pass [false] to persistLocale if you won't to persist locale
+  /// by default [true]
+  await TranslatorController.setup();
+  // ... Add more logic of you code ...
+  runApp(const App());
+}
+```
+2. Wrap MaterialApp with LocalizationBuilder widget
+```dart
+return LocalizationBuilder(
+      builder: (locale, delegates, locales) => MaterialApp(
+        // ... Other properties ...
+        locale: locale,
+        localizationsDelegates: delegates,
+        supportedLocales: locales,
+        // ... Other properties ...
+      ),
+    );
+```
+3. Access translated values by one of the following
+```dart
+Text(Translator.of(context).[translatedKey]),
+Text("translatedKey".tr()),
+/// Discover more methods from Translator description
+```
+
+## How to change localization
+- Set a new locale/langCode
+```dart
+ElevatedButton(
+    onPressed: () async {
+        await TranslatorController.setLocale(Locale('langCode'));
+        /// OR
+        await TranslatorController.setLangCode('langCode');
+    },
+    child: Text("Change Locale"),
+),
+```
