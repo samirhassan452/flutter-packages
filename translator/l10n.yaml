@@ -1,0 +1,26 @@
+# the path of the directory that contains the translation files
+arb-dir: lib/src/l10n
+# the name of the template arb file that will be used as basis for generating the Dart localization files
+template-arb-file: intl_en.arb
+# the name of the file for the output localization and localizations delegate classes.
+output-localization-file: app_localizations.dart
+output-class: AppLocalizations
+output-dir: lib/src/l10n/generated
+# A synthetic package structure (true) would place the generated files in a specific folder structure,
+# whereas setting it to false uses the specified output-dir.
+synthetic-package: false
+
+# Escaping syntax
+use-escaping: true
+
+# Avoid null checking
+nullable-getter: false
+
+#! Localizations documentation
+# https://localizely.com/blog/flutter-localization-step-by-step/?tab=using-gen-l10n
+# https://docs.flutter.dev/ui/accessibility-and-internationalization/internationalization#introduction-to-localizations-in-flutter
+# https://stackoverflow.com/questions/71400493/change-flutter-generated-localizations-files-directory
+# https://www.youtube.com/watch?v=WrqH5fF2ZuY
+
+#! Another way using intl plugin
+# https://www.youtube.com/watch?v=DMmvd5LAHuA
