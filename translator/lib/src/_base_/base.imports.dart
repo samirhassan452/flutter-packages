@@ -10,9 +10,9 @@ import 'package:shared_preferences/shared_preferences.dart'
 
 import '../l10n/generated/app_localizations.dart';
 
+//! parts
 part 'logic/controller.dart';
 part 'logic/notifier.dart';
-//! parts
 part 'logic/shared_prefs.dart';
 //?
 part 'utils/conversions.dart';
