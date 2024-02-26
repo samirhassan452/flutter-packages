@@ -41,6 +41,13 @@ abstract final class Translator {
 
 /// A widget to get the translated value and notify the app for locale changes
 class LocalizationBuilder extends StatefulWidget {
+  /// A builder method which return a [locale] as a first value,
+  ///
+  /// And a [localizationsDelegates] as a second value,
+  ///
+  /// And a [supportedLocales] as a third value,
+  ///
+  /// And it will update the material app locale in the whole app if [locale] is changed.
   final Widget Function(Locale?, Delegates?, Locales) builder;
   const LocalizationBuilder({super.key, required this.builder});
 
