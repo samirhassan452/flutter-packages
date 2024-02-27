@@ -19,11 +19,11 @@ dependencies:
 
   abstractor:
     git:
-      url: git@github.com:samirhassan452/flutter-packages.git
+      url: https://github.com/samirhassan452/flutter-packages.git
       path: abstractor
   widgey:
     git:
-      url: git@github.com:samirhassan452/flutter-packages.git
+      url: https://github.com/samirhassan452/flutter-packages.git
       path: widgey
   collection: ^1.18.0
 
