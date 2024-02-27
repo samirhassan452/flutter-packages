@@ -1,39 +1,77 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+<p align="center" style="font-size: 5em;">
+🚀 Assetor 🚀
+</p>
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages).
+---
 
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages).
--->
+A Flutter package which enables you to access assets through variables instead of string.
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+## How to install
 
-## Features
+1. Navigate to the root of you project
+2. Create a packages folder
+```Shell
+mkdir packages
+```
+3. Copy assetor package inside packages folder
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
 
-## Getting started
+## How to add/update assets
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
-
-## Usage
-
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
-
-```dart
-const like = 'sample';
+1. Add a new assets inside assets folder directly or inside subfolder of assets folder
+2. Navigate to assetor package
+```Shell
+cd packages/assetor/
+```
+3. Update generated assets
+```Shell
+fluttergen
+```
+`Optional` in case you define a new subfolder under assets folder
+1. Go to `pubspec.yaml` file
+2. Scroll to `flutter` section
+3. Add a new subfolder under `assets` section
+```yaml
+flutter:
+  ### DON'T FORGET INDENTATION ###
+  assets:
+    ### DON'T FORGET INDENTATION ###
+    - assets/subfolder/
+    # ... other subfolders
 ```
 
-## Additional information
+## How to use
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+1. Access assets through variable by it's parent folder
+```dart
+Image.asset(
+    Assetor.images.assetName,
+    // ... Other attributes
+),
+Image.asset(
+    Assetor.icons.png.assetName,
+    // ... Other attributes
+),
+SvgPicture.asset(
+    Assetor.icons.svg.assetName,
+    // ... Other attributes
+),
+```
+2. Access assets through widget directly by it's parent folder `if the asset is Flutter supported image format`
+```dart
+Assetor.images.assetName.image(
+    width: 120,
+    height: 120,
+    // ... Other attributes
+),
+Assetor.icons.png.assetName.image(
+    width: 120,
+    height: 120,
+    // ... Other attributes
+),
+Assetor.icons.svg.assetName.svg(
+    width: 120,
+    height: 120,
+    // ... Other attributes
+),
+```
