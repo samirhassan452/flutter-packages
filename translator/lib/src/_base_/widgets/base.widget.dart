@@ -62,6 +62,9 @@ class _LocalizationBuilderState extends State<LocalizationBuilder> {
   void initState() {
     super.initState();
     transManager = TranslatorNotifier();
+    WidgetsBinding.instance.addPostFrameCallback((_) async {
+      await TranslatorController.setup();
+    });
   }
 
   @override

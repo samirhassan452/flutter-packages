@@ -73,3 +73,10 @@ ElevatedButton(
     child: Text("Change Locale"),
 ),
 ```
+
+### `NOTE`
+---
+```dart
+/// If you don't setup translator before [runApp()], 
+/// don't worry it will be setuped when wrapping LocalizationBuilder widget to MaterialApp.
+```

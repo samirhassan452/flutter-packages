@@ -16,6 +16,8 @@ final class TranslatorController {
   static bool get isInitialized => _isInitialized;
 
   static Future<void> setup({Locale? locale, bool persistLocale = true}) async {
+    if (_isInitialized) return; // To be sure that is initialized only once
+
     _initialLocale = locale;
     _persistLocale = persistLocale;
 
@@ -50,7 +52,6 @@ final class TranslatorController {
     if (langCode.isEmpty) {
       throw Exception("Please specify langcode, it cannot be empty");
     }
-
     await _setLocale(Locale(langCode));
   }
 
