@@ -33,7 +33,7 @@ final class TranslatorController {
 
   static Future<void> _initLocale() async {
     final Locale locale = _initialLocale ?? await fetchLocale();
-    if (_persistLocale) await setLocale(locale);
+    await setLocale(locale);
   }
 
   /// Fetch locale from SharedPrefs, if not exist then return system locale.
@@ -61,7 +61,7 @@ final class TranslatorController {
       throw Exception("Please specify locale, it not exist in locales list");
     }
 
-    await _sharedPrefs.setLocale(locale);
+    if (_persistLocale) await _sharedPrefs.setLocale(locale);
     await _notifier.setLocale(locale);
   }
 }
