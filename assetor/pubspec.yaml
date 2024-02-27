@@ -1,7 +1,13 @@
 name: assetor
-description: "A new Flutter package project."
+description: "A Flutter package which enables you to access assets through variables instead of string."
 version: 0.0.1
-homepage:
+homepage: https://github.com/samirhassan452/flutter-packages
+repository: https://github.com/samirhassan452/flutter-packages
+issue_tracker: https://github.com/samirhassan452/flutter-packages/issues
+documentation: https://github.com/samirhassan452/flutter-packages/tree/main/assetor
+topics: []
+
+publish_to: 'none'
 
 environment:
   sdk: '>=3.3.0 <4.0.0'
