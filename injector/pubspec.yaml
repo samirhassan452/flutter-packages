@@ -19,7 +19,7 @@ dependencies:
   
   utilify:
     git:
-      url: git@github.com:samirhassan452/flutter-packages.git
+      url: https://github.com/samirhassan452/flutter-packages.git
       path: utilify
 
 dev_dependencies:
