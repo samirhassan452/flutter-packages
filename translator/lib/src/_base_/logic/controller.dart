@@ -60,8 +60,9 @@ final class TranslatorController {
     } else if (locale.isSupportedLocale() == false) {
       throw Exception("Please specify locale, it not exist in locales list");
     }
-
-    if (_persistLocale) await _sharedPrefs.setLocale(locale);
-    await _notifier.setLocale(locale);
+    await Future.wait([
+      if (_persistLocale) _sharedPrefs.setLocale(locale),
+      _notifier.setLocale(locale),
+    ]);
   }
 }
