@@ -10,11 +10,16 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  
+  # The Flutter code generator for your assets, fonts, colors, … — Get rid of all String-based APIs.
+  flutter_gen: ^5.4.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^3.0.0
+  flutter_lints: ^3.0.1
+  build_runner: ^2.4.8
+  flutter_gen_runner: ^5.4.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
