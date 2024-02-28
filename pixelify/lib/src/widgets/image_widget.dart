@@ -66,7 +66,7 @@ class DrawImage<T> extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     try {
-      switch (svgType) {
+      switch (imgType) {
         case (true, _, _, _):
           return Image.asset(
             src as String,
@@ -183,6 +183,6 @@ class DrawImage<T> extends StatelessWidget {
     }
   }
 
-  (bool, bool, bool, bool) get svgType =>
-      (src.isLocalSvg, src.isNetworkSvg, src.isFileSvg, src.isBytesSvg);
+  (bool, bool, bool, bool) get imgType =>
+      (src.isLocalImg, src.isNetworkImg, src.isFileImg, src.isBytesImg);
 }
