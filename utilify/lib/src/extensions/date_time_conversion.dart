@@ -32,8 +32,11 @@ extension NullableDateTimeConversion on DateTime? {
   bool get isNullOrEmpty => this == null || isEmpty;
 
   /// Format date
-  String toDateFormat({String format = UDateFormat.ddMMyyyySlash}) =>
-      UFormatter.formatDate(this, format: format);
+  String toDateFormat({
+    String format = UDateFormat.ddMMyyyySlash,
+    String? locale,
+  }) =>
+      UFormatter.formatDate(this, format: format, locale: locale);
 }
 
 ///

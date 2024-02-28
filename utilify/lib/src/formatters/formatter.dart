@@ -9,13 +9,27 @@ abstract final class UFormatter {
   static String formatDate(
     DateTime? date, {
     String format = UDateFormat.ddMMyyyySlash,
+    String? locale,
   }) {
     date ??= DateTime.now();
-    return DateFormat(format).format(date);
+    return DateFormat(format, locale).format(date);
   }
 
-  static String formatCurrency(double amount, {String symbol = "\$"}) {
-    return NumberFormat.currency(symbol: symbol).format(amount);
+  static String formatCurrency(
+    double amount, {
+    String? locale,
+    String? name,
+    String symbol = "\$",
+    int? decimalDigits,
+    String? customPattern,
+  }) {
+    return NumberFormat.currency(
+      locale: locale,
+      name: name,
+      symbol: symbol,
+      decimalDigits: decimalDigits,
+      customPattern: customPattern,
+    ).format(amount);
   }
 
   static String formatPhoneNumber(String phoneNumber) {
