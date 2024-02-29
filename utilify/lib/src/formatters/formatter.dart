@@ -6,16 +6,21 @@ part of '../base.imports.dart';
 abstract final class UFormatter {
   UFormatter._();
 
-  static String formatDate(
-    DateTime? date, {
+  static String date(
+    DateTime date, {
     String format = UDateFormat.ddMMyyyySlash,
     String? locale,
   }) {
-    date ??= DateTime.now();
-    return DateFormat(format, locale).format(date);
+    try {
+      return DateFormat(format, locale).format(date);
+    } on FormatException catch (e) {
+      throw FormatException(
+        'Format Exception occurred {UFormatter.date()} method: $e',
+      );
+    }
   }
 
-  static String formatCurrency(
+  static String currency(
     double amount, {
     String? locale,
     String? name,
@@ -23,16 +28,36 @@ abstract final class UFormatter {
     int? decimalDigits,
     String? customPattern,
   }) {
-    return NumberFormat.currency(
-      locale: locale,
-      name: name,
-      symbol: symbol,
-      decimalDigits: decimalDigits,
-      customPattern: customPattern,
-    ).format(amount);
+    try {
+      return NumberFormat.currency(
+        locale: locale,
+        name: name,
+        symbol: symbol,
+        decimalDigits: decimalDigits,
+        customPattern: customPattern,
+      ).format(amount);
+    } on FormatException catch (e) {
+      throw FormatException(
+        'Format Exception occurred {UFormatter.currency()} method: $e',
+      );
+    }
   }
 
-  static String formatPhoneNumber(String phoneNumber) {
+  static String number(
+    num number, {
+    String? format,
+    String? locale,
+  }) {
+    try {
+      return NumberFormat(format, locale).format(number);
+    } on FormatException catch (e) {
+      throw FormatException(
+        'Format Exception occurred {UFormatter.number()} method: $e',
+      );
+    }
+  }
+
+  static String phoneNumber(String phoneNumber) {
     // Assuming a 10-digits US phone number format: (123) 456-7890
     if (phoneNumber.length == 10) {
       phoneNumber =
@@ -44,7 +69,7 @@ abstract final class UFormatter {
     return phoneNumber;
   }
 
-  static String formatInternationalPhoneNumber(String phoneNumber) {
+  static String internationalPhoneNumber(String phoneNumber) {
     // Remove any non-digit characters from the phone number
     String digitsOnly = phoneNumber.replaceAll(RegExp(r'\D'), '');
     // Extract the country code from the digitsOnly

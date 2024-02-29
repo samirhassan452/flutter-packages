@@ -121,22 +121,43 @@ extension StringConversion on String {
       );
     }
   }
+
+  String dateFormat({
+    String format = UDateFormat.ddMMyyyySlash,
+    String? locale,
+  }) {
+    try {
+      final DateTime dateTime = dateParse();
+      return dateTime.toDateFormat(format: format);
+    } on FormatException catch (e) {
+      throw FormatException(
+        'Format Exception occurred {dateFormat()} method: $e',
+      );
+    }
+  }
+
+  DateTime dateParse() {
+    try {
+      return DateTime.parse(this);
+    } on FormatException catch (e) {
+      throw FormatException(
+        'Format Exception occurred {dateParse()} method: $e',
+      );
+    }
+  }
 }
 
 extension NullableStringConversion on String? {
   /// Return empty string if the string is null
   String get orEmpty => this ?? '';
 
-  String emptyIfNull() => switch (this) {
-        (String? val) when val == null => '',
-        _ => this!,
-      };
-  String notFoundIfEmptyOrNull() => switch (this) {
-        (_) when isNullOrEmpty => 'Not Found',
-        _ => this!,
-      };
+  /// It is suitable if you want to assign a value if the string is null or empty
+  String orAssign(String value) =>
+      this == null || this!.isEmpty ? value : this!;
 
-  bool get isNullOrEmpty => this == null || (this?.isEmpty ?? true);
+  String notFoundIfEmptyOrNull() => orAssign("Not Found");
+
+  bool get isNullOrEmpty => orEmpty.isEmpty;
 
   Color toColor() {
     if (this == null) return const Color(0xFF000000);

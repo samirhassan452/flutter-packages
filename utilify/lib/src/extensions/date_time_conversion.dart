@@ -15,6 +15,13 @@ extension DateTimeConversion on DateTime {
   DateTime onlyDate() => DateTime(year, month, day);
   DateTime lastDayOfYear() => DateTime(year + 1, 1, 0);
   DateTime nextYear() => DateTime(year + 2, 1, 0);
+
+  /// Format date
+  String toDateFormat({
+    String format = UDateFormat.ddMMyyyySlash,
+    String? locale,
+  }) =>
+      UFormatter.date(this, format: format, locale: locale);
 }
 
 ///
@@ -30,13 +37,6 @@ extension NullableDateTimeConversion on DateTime? {
   bool get isEmpty => this != null && this!.year == 0001;
   bool get isNotEmpty => isEmpty == false;
   bool get isNullOrEmpty => this == null || isEmpty;
-
-  /// Format date
-  String toDateFormat({
-    String format = UDateFormat.ddMMyyyySlash,
-    String? locale,
-  }) =>
-      UFormatter.formatDate(this, format: format, locale: locale);
 }
 
 ///

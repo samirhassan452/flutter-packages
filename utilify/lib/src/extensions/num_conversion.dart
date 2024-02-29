@@ -74,4 +74,11 @@ extension NumConversion on num {
 
   ///
   bool get isZero => this == 0 || this == 0.0;
+
+  ///
+  String toNumberFormat({
+    String? format,
+    String? locale,
+  }) =>
+      UFormatter.number(this, format: format, locale: locale);
 }
