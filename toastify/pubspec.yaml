@@ -1,5 +1,5 @@
 name: toastify
-description: "A new Flutter package project."
+description: "Toastify is  built on top of Toastification package with more customization and easy access to use."
 version: 0.0.1
 homepage: https://github.com/samirhassan452/flutter-packages
 repository: https://github.com/samirhassan452/flutter-packages
@@ -16,6 +16,9 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  
+  # Toastification is a Flutter package that allows you to easily show toast and notification messages in your application.
+  toastification: ^1.2.1
 
 dev_dependencies:
   flutter_test:
