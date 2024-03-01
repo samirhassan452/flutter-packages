@@ -50,6 +50,12 @@ abstract final class URegex {
     return RegExp(pattern);
   }
 
+  static RegExp saudiPhoneNumber() {
+    const String pattern =
+        r'^(009665|9665|\+9665|05|5)(5|0|3|6|4|9|1|8|7)([0-9]{7})$';
+    return RegExp(pattern);
+  }
+
   static RegExp nationalID({String prefix = '1', int length = 9}) {
     String pattern = '^';
 
@@ -59,6 +65,11 @@ abstract final class URegex {
 
     pattern += '\\d{$length}';
 
+    return RegExp(pattern);
+  }
+
+  static RegExp saudiNationalID({String prefix = '1', int length = 9}) {
+    const String pattern = r'^(1|2)(\d{9})$';
     return RegExp(pattern);
   }
 
