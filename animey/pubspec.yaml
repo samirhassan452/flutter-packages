@@ -16,6 +16,20 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  
+  abstractor:
+    git:
+      url: https://github.com/samirhassan452/flutter-packages.git
+      path: abstractor
+  
+  # Fancy pre-built animations that can easily be integrated into any Flutter application.
+  animations: ^2.0.11
+  # An animation package inspired in [Animate.css](https://animate.style/),
+  animate_do: ^3.3.4
+  # A collection loading animations written in pure dart. Out of the box, no extra dependency.
+  loading_indicator: ^3.1.1
+  # This shimmer animation widget can help you bring simple yet beautiful skeleton loaders to your project with ease.
+  shimmer_animation: ^2.1.0+1
 
 dev_dependencies:
   flutter_test:
