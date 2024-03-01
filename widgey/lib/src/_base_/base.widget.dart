@@ -246,4 +246,15 @@ class Widgey extends Abstractor {
             child: child,
           ),
         );
+
+  ///
+  Widgey.keepAlive({
+    super.key,
+    required Widget child,
+  }) : super(
+          child: KeepAlivePage(
+            key: key,
+            child: child,
+          ),
+        );
 }

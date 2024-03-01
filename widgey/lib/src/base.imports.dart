@@ -15,6 +15,7 @@ part '_base_/base.widget.dart';
 part 'utils/asterisk_positions.dart';
 part 'widgets/draggable_sheet.widget.dart';
 part 'widgets/glowing_scroll.widget.dart';
+part 'widgets/keep_alive.widget.dart';
 part 'widgets/list_node.widget.dart';
 part 'widgets/widget_error.dart';
 part 'widgets/widget_label.dart';
