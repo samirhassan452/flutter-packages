@@ -29,4 +29,17 @@ class Animey extends Abstractor {
             colors: colors,
           ),
         );
+
+  /// For fully customizable fade in animation use [AnimeyFadeIn] widget.
+  Animey.fadeIn({
+    super.key,
+    required Widget child,
+    AnimeyType type = const FadeInType(),
+  }) : super(
+          child: AnimeyFadeIn(
+            key: key,
+            type: type,
+            child: child,
+          ),
+        );
 }
