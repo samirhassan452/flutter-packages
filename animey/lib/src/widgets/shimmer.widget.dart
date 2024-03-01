@@ -1,6 +1,6 @@
 part of '../base.imports.dart';
 
-class AnimeyShimmerWidget extends StatelessWidget {
+class AnimeyShimmer extends StatelessWidget {
   /// accepts a child Widget over which the animation is to be displayed
   final Widget? child;
 
@@ -30,7 +30,7 @@ class AnimeyShimmerWidget extends StatelessWidget {
 
   /// accepts a ShimmerDirection and aligns the animation accordingly. Default value is ShimmerDirection.fromLBRT()
   final ShimmerDirection direction;
-  const AnimeyShimmerWidget({
+  const AnimeyShimmer({
     super.key,
     this.child,
     this.size = Size.zero,

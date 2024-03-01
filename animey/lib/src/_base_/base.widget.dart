@@ -1,9 +1,7 @@
 part of '../base.imports.dart';
 
 class Animey extends Abstractor {
-  const Animey({super.key}) : super(child: const SizedBox());
-
-  /// For fully customizable use [AnimeyShimmerWidget]
+  /// For fully customizable shimmer animation use [AnimeyShimmer] widget.
   Animey.shimmer({
     super.key,
     Widget? child,
@@ -11,10 +9,24 @@ class Animey extends Abstractor {
     BorderRadiusGeometry borderRadius =
         const BorderRadius.all(Radius.circular(8.0)),
   }) : super(
-          child: AnimeyShimmerWidget(
+          child: AnimeyShimmer(
+            key: key,
             size: size,
             borderRadius: borderRadius,
             child: child,
+          ),
+        );
+
+  /// For fully customizable loading animation use [AnimeyLoading] widget.
+  Animey.loading({
+    super.key,
+    Indicator indicatorType = Indicator.ballRotateChase,
+    List<Color>? colors,
+  }) : super(
+          child: AnimeyLoading(
+            key: key,
+            indicatorType: indicatorType,
+            colors: colors,
           ),
         );
 }
