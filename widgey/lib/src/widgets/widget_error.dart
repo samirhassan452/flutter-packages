@@ -4,8 +4,8 @@ class WidgetError extends StatelessWidget {
   final Widget child;
   final Widget? error;
   final String? errorText;
-  final TextStyle? errorStyle;
-  final int? errorMaxLines;
+  final TextStyle? style;
+  final int? maxLines;
   final EdgeInsetsGeometry padding;
   final double gap;
   const WidgetError({
@@ -13,8 +13,8 @@ class WidgetError extends StatelessWidget {
     required this.child,
     this.error,
     this.errorText,
-    this.errorStyle,
-    this.errorMaxLines,
+    this.style,
+    this.maxLines,
     this.padding = EdgeInsets.zero,
     this.gap = 6.0,
   }) : assert(
@@ -39,7 +39,7 @@ class WidgetError extends StatelessWidget {
                 child: Textify(
                   errorText!,
                   style: getStyle(context),
-                  maxLines: errorMaxLines,
+                  maxLines: maxLines,
                 ),
               ),
             _ => const SizedBox.shrink(),
@@ -52,7 +52,7 @@ class WidgetError extends StatelessWidget {
   bool get showError =>
       (errorText != null && errorText!.isNotEmpty) || error != null;
   TextStyle getStyle(BuildContext context) =>
-      errorStyle ??
+      style ??
       Theme.of(context)
           .textTheme
           .bodySmall!
