@@ -3,6 +3,11 @@ part of '../base.imports.dart';
 extension NavigationConversion on BuildContext {
   bool get isFirstRoute => ModalRoute.of(this)?.isFirst ?? false;
 
+  void popDialog<T extends Object?>([T? result]) =>
+      Navigator.of(this).pop(true);
+  void closeLoader<T extends Object?>([T? result]) =>
+      Navigator.of(this).pop(true);
+
   //! General
   Future<T?> refreshCurrentPage<T extends Object?, TO extends Object?>(
     Widget currentPage,
@@ -11,9 +16,6 @@ extension NavigationConversion on BuildContext {
         this,
         MaterialPageRoute(builder: (BuildContext context) => currentPage),
       );
-
-  void popDialog<T extends Object?>([T? result]) =>
-      Navigator.of(this).pop(true);
 
   //! Pops
   void popRoute<T extends Object?>({bool rootNavigator = false, T? result}) =>
