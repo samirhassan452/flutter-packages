@@ -20,9 +20,9 @@ abstract final class URegex {
 
   static final RegExp search = RegExp(r"^[a-zA-Z0-9ء-ي ]*");
 
-  RegExp password({int min = 8, int? max, String specials = "@\$!%*?&#"}) {
+  RegExp password({int min = 8, int? max, String specialChars = "@\$!%*?&#"}) {
     String pattern =
-        '^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[$specials])([A-Za-z\\d$specials]{$min,${max ?? ''}})\$';
+        '^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[$specialChars])([A-Za-z\\d$specialChars]{$min,${max ?? ''}})\$';
     return RegExp(pattern);
   }
 
