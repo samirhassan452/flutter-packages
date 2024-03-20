@@ -16,6 +16,7 @@ part 'logic/notifier.dart';
 part 'logic/shared_prefs.dart';
 //?
 part 'utils/conversions.dart';
+part 'utils/supported_locales.dart';
 part 'utils/typedefs.dart';
 //?
 part 'widgets/base.widget.dart';

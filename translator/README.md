@@ -14,6 +14,7 @@ A Flutter package which responsible for translation/localization.
 mkdir packages
 ```
 3. Copy translator package inside packages folder
+4. Update supported locales enum if needed. (Default: ar & en)
 
 
 ## How to update arb
@@ -69,6 +70,17 @@ ElevatedButton(
         await TranslatorController.setLocale(Locale('langCode'));
         /// OR
         await TranslatorController.setLangCode('langCode');
+    },
+    child: Text("Change Locale"),
+),
+
+/// OR by the helper methods from supported locales
+
+ElevatedButton(
+    onPressed: () async {
+        await TranslatorController.setLocale(SupportedLocale.switchLocale);
+        /// OR
+        await TranslatorController.setLangCode(SupportedLocale.switchLangCode);
     },
     child: Text("Change Locale"),
 ),
