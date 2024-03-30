@@ -101,9 +101,14 @@ class Widgey extends Abstractor {
     BorderRadiusGeometry? borderRadius,
     // BoxBorder? border,
     ShapeBorder? shape,
-    CrossAxisAlignment crossAxisAlignment = CrossAxisAlignment.center,
-    CrossAxisAlignment? leadingCrossAxisAlignment,
-    CrossAxisAlignment? trailingCrossAxisAlignment,
+    MainAxisAlignment subtitleMainAxisAlignment = MainAxisAlignment.start,
+    MainAxisAlignment leadingMainAxisAlignment = MainAxisAlignment.start,
+    MainAxisAlignment trailingMainAxisAlignment =
+        MainAxisAlignment.spaceBetween,
+    // CrossAxisAlignment crossAxisAlignment = CrossAxisAlignment.center,
+    CrossAxisAlignment subtitleCrossAxisAlignment = CrossAxisAlignment.start,
+    CrossAxisAlignment leadingCrossAxisAlignment = CrossAxisAlignment.center,
+    CrossAxisAlignment trailingCrossAxisAlignment = CrossAxisAlignment.center,
     bool enabled = true,
     bool selected = false,
     double gap = 12.0,
@@ -112,6 +117,7 @@ class Widgey extends Abstractor {
     double? subtitleGap,
     VoidCallback? onTap,
     VoidCallback? onLongPress,
+    VoidCallback? onDoubleTap,
   }) : super(
           child: ListNodeWidget(
             leading: leading,
@@ -133,9 +139,13 @@ class Widgey extends Abstractor {
             borderRadius: borderRadius,
             // border: border,
             shape: shape,
-            crossAxisAlignment: crossAxisAlignment,
+            subtitleMainAxisAlignment: subtitleMainAxisAlignment,
+            leadingMainAxisAlignment: leadingMainAxisAlignment,
+            trailingMainAxisAlignment: trailingMainAxisAlignment,
+            // crossAxisAlignment: crossAxisAlignment,
             leadingCrossAxisAlignment: leadingCrossAxisAlignment,
             trailingCrossAxisAlignment: trailingCrossAxisAlignment,
+            subtitleCrossAxisAlignment: subtitleCrossAxisAlignment,
             enabled: enabled,
             selected: selected,
             gap: gap,
@@ -144,6 +154,7 @@ class Widgey extends Abstractor {
             subtitleGap: subtitleGap,
             onTap: onTap,
             onLongPress: onLongPress,
+            onDoubleTap: onDoubleTap,
           ),
         );
 

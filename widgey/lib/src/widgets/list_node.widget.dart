@@ -21,9 +21,14 @@ class ListNodeWidget extends StatelessWidget {
   final BorderRadiusGeometry? borderRadius;
   // final BoxBorder? border;
   final ShapeBorder? shape;
-  final CrossAxisAlignment crossAxisAlignment;
-  final CrossAxisAlignment? leadingCrossAxisAlignment;
-  final CrossAxisAlignment? trailingCrossAxisAlignment;
+  final MainAxisSize subtitleMainAxisSize;
+  final MainAxisAlignment subtitleMainAxisAlignment;
+  final MainAxisAlignment leadingMainAxisAlignment;
+  final MainAxisAlignment trailingMainAxisAlignment;
+  // final CrossAxisAlignment crossAxisAlignment;
+  final CrossAxisAlignment subtitleCrossAxisAlignment;
+  final CrossAxisAlignment leadingCrossAxisAlignment;
+  final CrossAxisAlignment trailingCrossAxisAlignment;
 
   final bool enabled;
   final bool selected;
@@ -35,6 +40,7 @@ class ListNodeWidget extends StatelessWidget {
 
   final VoidCallback? onTap;
   final VoidCallback? onLongPress;
+  final VoidCallback? onDoubleTap;
   const ListNodeWidget({
     super.key,
     this.leading,
@@ -56,9 +62,14 @@ class ListNodeWidget extends StatelessWidget {
     this.borderRadius,
     // this.border,
     this.shape,
-    this.crossAxisAlignment = CrossAxisAlignment.center,
-    this.leadingCrossAxisAlignment,
-    this.trailingCrossAxisAlignment,
+    this.subtitleMainAxisSize = MainAxisSize.min,
+    this.subtitleMainAxisAlignment = MainAxisAlignment.start,
+    this.leadingMainAxisAlignment = MainAxisAlignment.start,
+    this.trailingMainAxisAlignment = MainAxisAlignment.spaceBetween,
+    // this.crossAxisAlignment = CrossAxisAlignment.center,
+    this.subtitleCrossAxisAlignment = CrossAxisAlignment.start,
+    this.leadingCrossAxisAlignment = CrossAxisAlignment.center,
+    this.trailingCrossAxisAlignment = CrossAxisAlignment.center,
     this.enabled = true,
     this.selected = false,
     this.gap = 12.0,
@@ -67,6 +78,7 @@ class ListNodeWidget extends StatelessWidget {
     this.subtitleGap,
     this.onTap,
     this.onLongPress,
+    this.onDoubleTap,
   });
 
   @override
@@ -84,6 +96,7 @@ class ListNodeWidget extends StatelessWidget {
         child: InkWell(
           onTap: enabled ? onTap : null,
           onLongPress: enabled ? onLongPress : null,
+          onDoubleTap: enabled ? onDoubleTap : null,
           splashColor: acutalSplashColor,
           highlightColor: acutalHighlightColor,
           borderRadius: borderRadius?.resolve(Directionality.of(context)),
@@ -92,15 +105,14 @@ class ListNodeWidget extends StatelessWidget {
             padding: padding,
             child: Row(
               // mainAxisSize: MainAxisSize.min,
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment:
-                  trailingCrossAxisAlignment ?? crossAxisAlignment,
+              mainAxisAlignment: trailingMainAxisAlignment,
+              crossAxisAlignment: trailingCrossAxisAlignment,
               children: [
                 Flexible(
                   // fit: trailingFlex,
                   child: Row(
-                    crossAxisAlignment:
-                        leadingCrossAxisAlignment ?? crossAxisAlignment,
+                    mainAxisAlignment: leadingMainAxisAlignment,
+                    crossAxisAlignment: leadingCrossAxisAlignment,
                     // mainAxisSize: MainAxisSize.min,
                     children: [
                       if (leading != null) ...[
@@ -110,8 +122,9 @@ class ListNodeWidget extends StatelessWidget {
                       Flexible(
                         // fit: leadingFlex,
                         child: Column(
-                          mainAxisSize: MainAxisSize.min,
-                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisSize: subtitleMainAxisSize,
+                          mainAxisAlignment: subtitleMainAxisAlignment,
+                          crossAxisAlignment: subtitleCrossAxisAlignment,
                           children: [
                             if (title != null) ...[Flexible(child: title!)],
                             if (subtitle != null) ...[
