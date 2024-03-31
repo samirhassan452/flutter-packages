@@ -13,5 +13,5 @@ part '_base_/image.widget.dart';
 //?
 part 'utils/pixelify_conversion.dart';
 //?
-part 'widgets/image_widget.dart';
-part 'widgets/svg_widget.dart';
+part 'widgets/image.widget.dart';
+part 'widgets/svg.widget.dart';
