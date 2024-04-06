@@ -24,6 +24,20 @@ extension DateTimeConversion on DateTime {
     String? locale,
   }) =>
       UFormatter.date(this, format: format, locale: locale);
+
+  String toTimeago({
+    String? locale,
+    DateTime? clock,
+    bool allowFromNow = false,
+  }) {
+    // timeago.setLocaleMessages('ar', TimeagoMessagesAR());
+    return timeago.format(
+      this,
+      locale: locale,
+      clock: clock,
+      allowFromNow: allowFromNow,
+    );
+  }
 }
 
 ///

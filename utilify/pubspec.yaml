@@ -21,6 +21,8 @@ dependencies:
   gap: ^3.0.1
   # Contains code to deal with internationalized/localized messages, date and number formatting and parsing, bi-directional text, and other internationalization issues.
   intl: ^0.19.0
+  # A library useful for creating fuzzy timestamps. (e.g. "15 minutes ago")
+  timeago: ^3.6.1
 
 dev_dependencies:
   flutter_test:

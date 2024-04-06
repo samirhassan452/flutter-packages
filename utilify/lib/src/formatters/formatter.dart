@@ -20,6 +20,21 @@ abstract final class UFormatter {
     }
   }
 
+  static String timeAgo(
+    DateTime date, {
+    String? locale,
+    DateTime? clock,
+    bool allowFromNow = false,
+  }) {
+    // timeago.setLocaleMessages('ar', TimeagoMessagesAR());
+    return timeago.format(
+      date,
+      locale: locale,
+      clock: clock,
+      allowFromNow: allowFromNow,
+    );
+  }
+
   static String currency(
     double amount, {
     String? locale,

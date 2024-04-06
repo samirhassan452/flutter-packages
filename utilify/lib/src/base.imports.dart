@@ -17,10 +17,15 @@ import 'package:flutter/services.dart'
         SystemUiOverlayStyle;
 import 'package:gap/gap.dart' show Gap, SliverGap;
 import 'package:intl/intl.dart' show DateFormat, NumberFormat;
+import 'package:timeago/timeago.dart' as timeago;
+
+//! exports
+export 'package:timeago/timeago.dart' show LookupMessages;
 
 //! parts
 //? Classes
 part 'classes/range_list.dart';
+part 'classes/timeago.dart';
 //? Constants
 part 'constants/date_formats.dart';
 part 'constants/durations.dart';
