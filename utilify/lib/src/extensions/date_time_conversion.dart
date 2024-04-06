@@ -9,7 +9,9 @@ extension DateTimeConversion on DateTime {
             day == date.day &&
             hour == date.hour &&
             minute == date.minute &&
-            second == date.second,
+            second == date.second &&
+            millisecond == date.millisecond &&
+            microsecond == date.microsecond,
       };
 
   DateTime onlyDate() => DateTime(year, month, day);
