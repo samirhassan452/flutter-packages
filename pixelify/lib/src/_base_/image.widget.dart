@@ -12,6 +12,8 @@ class PixelifyImage<T> extends Abstractor {
     double? width,
     double? height,
     Color? color,
+    BoxFit? fit,
+    AlignmentGeometry alignment = Alignment.center,
     String? package,
     Map<String, String>? headers,
   }) : super(
@@ -25,6 +27,8 @@ class PixelifyImage<T> extends Abstractor {
             width: width,
             height: height,
             color: color,
+            fit: fit,
+            alignment: alignment,
             package: package,
             headers: headers,
           ),
@@ -40,6 +44,8 @@ class PixelifyImage<T> extends Abstractor {
     double? height,
     Widget Function(BuildContext)? placeholderBuilder,
     ColorFilter? colorFilter,
+    BoxFit fit = BoxFit.contain,
+    AlignmentGeometry alignment = Alignment.center,
     Color? color,
   }) : super(
           child: DrawSvg<T>(
@@ -50,6 +56,8 @@ class PixelifyImage<T> extends Abstractor {
             width: width,
             height: height,
             colorFilter: colorFilter,
+            fit: fit,
+            alignment: alignment,
             color: color,
           ),
         );
